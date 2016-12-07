@@ -1,0 +1,9 @@
+#IntelliJ
+.idea/
+out/
+META-INF/
+
+#MAC
+.DS_Store
+
+jennifer-view-adapter-jira.iml
