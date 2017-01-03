@@ -10,8 +10,9 @@ fi;
 #Set the path to jennifer-view-adapter-jira.jar
 ADAPTER_CLASS_PATH="../jennifer-view-adapter-jira.jar";
 
-#Set view server home
-VIEW_SERVER_HOME="/Users/khalid/jennifer/testing/server.view"
+#Set view server home directory
+#example VIEW_SERVER_HOME=/home/jennifer/server.view
+VIEW_SERVER_HOME=PATH_TO_VIEW_SERVER_DIRECTORY
 
 KRYPTO=adapter.jennifer.jira.util.Krypto
 

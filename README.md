@@ -19,12 +19,14 @@ jira_base_url=JIRA_URL_HERE
 # JIRA username that will be used for authentication and creating/posting issues
 jira_username=JIRA_USERNAME_HERE
 
-# This value is used to determine if you provide plain or encrypted password.
-# 0: Encrypted (default). 1: Plain text password.
+# This value is used to determine if you are providing plain or encrypted password.
+# 0: Encrypted (default)
+# 1: Plain text password.
 # To Encrypt the password, please run the util/krypto.sh
 jira_plainpassword=0
 
 # JIRA account password  that will be used for authentication
+# Either use plain password or encrypted password depending on the jira_plainpassword value
 jira_password=JIRA_PASSWORD_HERE
 
 # JIRA Project KEY where issues will be created
