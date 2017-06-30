@@ -1,7 +1,5 @@
 package adapter.jennifer.jira.entity;
 
-import adapter.jennifer.jira.util.Krypto;
-
 /**
  * JIRA Connection properties;
  *
@@ -24,12 +22,6 @@ public class JiraProp {
 	private String password;
 
 	/**
-	 * Used to determine if the password provided is encrypted or plain text
-	 */
-	private boolean plainPassword;
-
-	
-	/**
 	 * JIRA Project Key
 	 */
 	private String projectKey;
@@ -51,12 +43,7 @@ public class JiraProp {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getPassword() {
-		if(isPlainPassword())
-			return password;
-		else
-			return new Krypto().decrypt(password);
-	}
+	public String getPassword() { return password;}
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -72,6 +59,4 @@ public class JiraProp {
 	public String getIssueType() {
 		return issueType;
 	}
-	public boolean isPlainPassword() {return plainPassword;}
-	public void setPlainPassword(boolean plainPassword) {this.plainPassword = plainPassword;}
 }

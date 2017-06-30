@@ -7,6 +7,7 @@ import adapter.jennifer.jira.util.JIRAClient;
 import com.jennifersoft.view.adapter.JenniferAdapter;
 import com.jennifersoft.view.adapter.JenniferModel;
 import com.jennifersoft.view.adapter.model.JenniferEvent;
+import com.jennifersoft.view.adapter.util.LogUtil;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -29,11 +30,10 @@ public class JiraAdapter implements JenniferAdapter{
 
             Issue createdIssue = JIRAClient.createIssue(jiraProp, issueTitle, issueDescription);
             if(createdIssue != null){
-                System.out.format("%s [JIRA Plugin] Issue created, Issue ID: %s, Issue Key: %s\n",SDF.format(new Date()),createdIssue.getId(),createdIssue.getKey());
+                LogUtil.info(String.format("%s [JIRA Plugin] Issue created, Issue ID: %s, Issue Key: %s\n", SDF.format(new Date()),createdIssue.getId(),createdIssue.getKey()));
             }else{
-                System.out.format("%s [JIRA Plugin] Failed to create JIRA issue\n",SDF.format(new Date()));
+                LogUtil.error(String.format("%s [JIRA Plugin] Failed to create JIRA issue\n", SDF.format(new Date())));
             }
-
         }
     }
 

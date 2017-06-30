@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 
 import adapter.jennifer.jira.entity.Issue;
 import adapter.jennifer.jira.entity.JiraProp;
-import com.jennifersoft.view.adapter.util.LogUtil;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -21,7 +20,7 @@ import org.json.JSONObject;
  */
 public class JIRAClient {
 
-	
+
 	/**
 	 * Called by the Event adapter to create a JIRA issue. 
 	 * This method first calls <b>dataToJson</b> to parse the payload to JSON format then send the data to JIRA
@@ -52,7 +51,6 @@ public class JIRAClient {
 			}
 			return createdIssue;
 		}catch(Exception ex){
-			LogUtil.error("Failed to create JIRA issue: " + ex.toString());
 			return null;
 		}
 	}
@@ -94,7 +92,6 @@ public class JIRAClient {
 			createdIssue.setSelf(object.getString("self"));
 			return createdIssue;
 		}catch(JSONException ex){
-			LogUtil.error("Failed to parse JSON String: " + ex.toString());
 			return null;
 		}
 	}
